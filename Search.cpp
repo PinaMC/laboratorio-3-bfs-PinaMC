@@ -9,7 +9,12 @@
 namespace std
 {
     //this is needed to store a pair<int,int> in an associative container
+    //este es necesario para almacenar un pair<int,int> en un contenedor asociativo
     //such as unorered_set and unordered_map
+    //como un unordered_set y un unordered_map
+    //unordeered_set significa que no se mantiene un orden de los elementos, lo que permite una búsqueda más rápida, pero no garantiza el orden de los elementos al iterar sobre ellos.
+    //unordered_map es un contenedor que almacena pares clave-valor, donde cada clave es única. Al igual que unordered_set, no mantiene un orden específico de los elementos, lo que permite una búsqueda rápida basada en la clave.
+    
 	template<> struct hash<std::pair<int,int>>
 	{
 		std::size_t operator()( const std::pair<int,int> & p) const noexcept

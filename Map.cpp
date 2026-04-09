@@ -2,11 +2,13 @@
 #include <iostream>
 #include <fstream>
 
+using namespace std;
+
 Map::Map():h(0),w(0){
 
 }
 
-Map::Map(std::string filename){
+Map::Map(string filename){
     
     //Load the file
     //Resize map
@@ -33,13 +35,13 @@ Map& Map::operator=(const Map& rhs){
 void Map::print() const{
     for(int i=0;i<h;i++){
         for(int j=0;j<w;j++){
-            std::cout<<_map[i][j]<<" ";
+            cout<<_map[i][j]<<" ";
         }
-        std::cout<<std::endl;
+        cout<<endl;
     }
-    std::cout<<std::endl;
+    cout<<endl;
 }
-void Map::print(std::vector<std::pair<int,int>> path) const{
+void Map::print(vector<pair<int,int>> path) const{
     auto __map=_map;
 
     __map[path[0].first][path[0].second]=2;
@@ -51,11 +53,11 @@ void Map::print(std::vector<std::pair<int,int>> path) const{
     for(int i=0;i<h;i++){
         for(int j=0;j<w;j++){
 
-            std::cout<<__map[i][j]<<" ";
+            cout<<__map[i][j]<<" ";
         }
-        std::cout<<std::endl;
+        cout<<endl;
     }
-    std::cout<<std::endl;
+    cout<<endl;
 }
 
 bool operator==(const Map& lhs, const Map& rhs){

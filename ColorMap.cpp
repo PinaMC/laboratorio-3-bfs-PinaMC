@@ -1,7 +1,7 @@
 #include "ColorMap.h"
 #include <iostream>
 
-
+using namespace std;
 
 /*
 red 31
@@ -20,13 +20,13 @@ ColorMap::ColorMap(const Map& rhs):Map(rhs),colors{37,34,32,31,33}{
 void ColorMap::print() const{
     for(int i=0;i<h;i++){
         for(int j=0;j<w;j++){
-            std::cout<<"\033[1;" << colors[_map[i][j]] << "m"<<_map[i][j]<<" ";
+            cout<<"\033[1;" << colors[_map[i][j]] << "m"<<_map[i][j]<<" ";
         }
-        std::cout<<std::endl;
+        cout<<endl;
     }
-    std::cout<<"\033[1;37m\n";
+    cout<<"\033[1;37m\n";
 }
-void ColorMap::print(std::vector<std::pair<int,int>> path) const{
+void ColorMap::print(vector<pair<int,int>> path) const{
     auto __map=_map;
 
     __map[path[0].first][path[0].second]=2;
@@ -38,9 +38,9 @@ void ColorMap::print(std::vector<std::pair<int,int>> path) const{
     for(int i=0;i<h;i++){
         for(int j=0;j<w;j++){
 
-            std::cout<<"\033[1;" << colors[__map[i][j]] << "m"<<__map[i][j]<<" ";
+            cout<<"\033[1;" << colors[__map[i][j]] << "m"<<__map[i][j]<<" ";
         }
-        std::cout<<std::endl;
+        cout<<endl;
     }
-    std::cout<< "\033[1;37m\n";
+    cout<< "\033[1;37m\n";
 }
