@@ -2,7 +2,7 @@
 #include <iostream>
 
 using namespace std;
-
+//codigo para imprimir el mapa con colores, usando los códigos de colores ANSI para la terminal
 /*
 red 31
 green 32

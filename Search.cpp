@@ -5,7 +5,9 @@
 #include <iostream>
 #include <limits>
 
-
+//Este archivo es el que contiene la implementación del algoritmo de búsqueda BFS (Breadth-First Search) 
+//para encontrar un camino en un mapa representado por la clase Map. Además, incluye una función para reconstruir
+//el camino encontrado a partir de un mapa de padres (pathCache) que se genera durante la búsqueda.
 namespace std
 {
     //this is needed to store a pair<int,int> in an associative container

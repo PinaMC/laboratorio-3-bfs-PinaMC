@@ -3,8 +3,6 @@
 #include <array>
 
 
-
-
 class ColorMap:public Map{//clase que herede de Map y reimplemente los métodos print para imprimir con colores
     std::array<int,5> colors;
 public:

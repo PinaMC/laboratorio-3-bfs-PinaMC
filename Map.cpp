@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 
+//fstream para leer archivos
 using namespace std;
 
 Map::Map():h(0),w(0){
@@ -9,11 +10,33 @@ Map::Map():h(0),w(0){
 }
 
 Map::Map(string filename){
-    
+
     //Load the file
     //Resize map
     //Save file information in map
     //Close file
+
+    //1- Abrir el archivo:
+    ifstream file(filename);//ifstream para leer el archivo
+    if(!file.is_open()){
+        cerr<<"Error al abrir el file: "<<filename<<endl;
+        exit(1);
+    }
+    //2- Leer la primera linea para obtener h y w
+    //El archivo simple.txt es el txt mas pequeño con tiene 8 filas y 6 columnas, entonces h=11 y w=16
+    file>>h>>w; 
+
+    //3- Redimiensiona el mapa
+    _map.resize(h, vector<int>(w)); //En h filas y w columnas
+
+    //5-Leer los numeros / guardar la información del archivo en el _map
+    for(int i = 0; i < h; i++){
+        for(int j = 0; j < w; j++){
+            file >> _map[i][j]; // lee cada número directamente como int
+        }
+    }
+    file.close(); //cierra el archivo
+
 }   
 
 Map::Map(const Map& rhs):h(rhs.h),w(rhs.w),_map(rhs._map){
