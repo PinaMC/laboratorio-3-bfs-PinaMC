@@ -8,6 +8,7 @@
 //----------------
 //compile with: g++ -Wall -Wextra -std=c++11 -g Foo.cpp -o foo
 //debug with: valgrind --leak-check=full ./foo
+using namespace std;
 
 int main(int argc, char *argv[]){
 
@@ -18,6 +19,12 @@ int main(int argc, char *argv[]){
 
     //Verify that the amount of arguments is correct
     //6 arguments: program name, map file, x1, y1, x2, y2
+    
+    //1- 
+    if (argc != 6) {
+        cerr << "Formato correcto: " << argv[0] << " <mapa> x1, y1, x2, y2\n" << endl;
+        return 1;
+    }
 
     //Load map with class Map
     Map map(argv[1]);
@@ -28,6 +35,7 @@ int main(int argc, char *argv[]){
     colorMap.print(path);
     
     //Calculate path distance
+
     //Print path distance
     
     return 0;
